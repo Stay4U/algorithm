@@ -33,9 +33,34 @@ m, n, k = map(int, input().split())
 2) N개의 수를 공백으로 구분하여 입력받기
 변수 = list(map(int, input().split()))
 
+3) data.sort(reverse=True)
+
 * 구현
 '''
 
+n, m, k = map(int, input().split())
+data = list(map(int, input().split()))
+data.sort()
+first = data[n-1]
+second = data[n-2]
+total = 0
 
+#1
+'''
+while True:
+  for i in range(k):
+    if m == 0: break
+    total += first
+    m -= 1
+  
+  if m == 0: break  
+  total += second
+  m -= 1
 
+print(total)
+'''  
+#2
+cnt =  (m // (k + 1)) * k
+cnt += m % (k + 1)
+print( (first * cnt) + (second * (m - cnt)) )
 

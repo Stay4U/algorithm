@@ -19,3 +19,8 @@ K : 5
 * 구현
 '''
 n, k = map(int, input().split())
+count = 0
+count += n - (int(n / k) * k)
+count += int(n // k)
+
+print(count)

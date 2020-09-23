@@ -23,3 +23,24 @@ R R R U D D
 
 * 구현
 '''
+n = int(input())
+plans = input().split()
+
+x, y = 1, 1 # start position
+
+dx = [0, 0, -1, 1] # L R U D
+dy = [-1, 1, 0, 0] # L R U D
+
+move_types = ['L', 'R', 'U', 'D']
+
+for plan in plans:
+  for i in range(len(move_types)):
+    if plan == move_types[i]:
+      nx = x + dx[i]
+      ny = y + dy[i]
+
+      if nx > n or nx < 1 or ny > n or ny < 1 : 
+        continue
+      x, y = nx, ny
+
+print(x, y)
